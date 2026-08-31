@@ -1,0 +1,6 @@
+export { EducationRepository } from './EducationRepository.js'
+export { ExperienceRepository } from './ExperienceRepository.js'
+export { InMemoryRepository } from './InMemoryRepository.js'
+export { ProjectRepository } from './ProjectRepository.js'
+export { Repository } from './Repository.js'
+export { SkillRepository } from './SkillRepository.js'

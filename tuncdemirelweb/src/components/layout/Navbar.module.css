@@ -1,0 +1,190 @@
+.bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  border-bottom: 1px solid transparent;
+  transition:
+    background-color 0.4s var(--ease),
+    border-color 0.4s var(--ease),
+    backdrop-filter 0.4s var(--ease);
+}
+
+.bar[data-scrolled] {
+  background: var(--bar-bg);
+  backdrop-filter: blur(14px) saturate(1.2);
+  border-bottom-color: var(--rule);
+}
+
+.progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--amber), rgba(242, 167, 59, 0.35));
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding-block: 0.85rem;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  min-width: 0;
+}
+
+.mark {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  flex: none;
+  border: 1px solid var(--amber-line);
+  border-radius: 2px;
+  background: var(--amber-soft);
+  color: var(--amber);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+  min-width: 0;
+}
+
+.brandText strong {
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.brandText span {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  white-space: nowrap;
+}
+
+.nav {
+  display: none;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.links a {
+  display: block;
+  padding: 0.45rem 0.7rem;
+  border-radius: 2px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  transition:
+    color 0.25s var(--ease),
+    background-color 0.25s var(--ease);
+}
+
+.links a:hover {
+  color: var(--ink);
+  background: var(--surface-soft);
+}
+
+.links a[data-active='true'] {
+  color: var(--amber);
+  background: var(--amber-soft);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: none;
+}
+
+.actionDivider {
+  width: 1px;
+  height: 18px;
+  background: var(--rule);
+}
+
+.toggle {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+  padding: 0.55rem 0.9rem;
+  border: 1px solid var(--rule-strong);
+  border-radius: 2px;
+}
+
+.sheet {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s var(--ease);
+  background: var(--sheet-bg);
+  backdrop-filter: blur(14px);
+}
+
+.sheet[data-open] {
+  grid-template-rows: 1fr;
+  border-bottom: 1px solid var(--rule);
+}
+
+.sheet > ul {
+  overflow: hidden;
+}
+
+.sheet a {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.95rem var(--gutter);
+  border-top: 1px solid var(--rule);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+}
+
+/* Dar ekranda marka metni yer kaplamasın; işaret yeter. */
+@media (max-width: 520px) {
+  .brandText {
+    display: none;
+  }
+}
+
+/* Menü, iki anahtarla birlikte sığdığı genişlikte açılır. */
+@media (min-width: 1020px) {
+  .nav {
+    display: block;
+  }
+
+  .toggle,
+  .sheet {
+    display: none;
+  }
+}

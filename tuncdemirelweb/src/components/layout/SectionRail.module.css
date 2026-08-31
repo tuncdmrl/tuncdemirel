@@ -1,0 +1,60 @@
+.rail {
+  display: none;
+}
+
+/* Ray, içerik sütununa değmeyecek genişlikte açılır. */
+@media (min-width: 1500px) {
+  .rail {
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 2rem;
+    transform: translateY(-50%);
+    z-index: 40;
+  }
+
+  .rail ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    border-left: 1px solid var(--rule);
+    padding-left: 0.9rem;
+  }
+
+  .rail a {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.32rem 0;
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: var(--ink-muted);
+    transition: color 0.3s var(--ease);
+  }
+
+  .rail a:hover {
+    color: var(--ink);
+  }
+
+  .tick {
+    width: 14px;
+    height: 1px;
+    flex: none;
+    background: var(--rule-strong);
+    transition:
+      width 0.35s var(--ease),
+      background-color 0.35s var(--ease);
+  }
+
+  .rail a[data-active='true'] {
+    color: var(--amber);
+  }
+
+  .rail a[data-active='true'] .tick {
+    width: 26px;
+    background: var(--amber);
+  }
+}

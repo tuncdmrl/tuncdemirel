@@ -1,0 +1,76 @@
+.grid {
+  display: grid;
+  gap: 2.25rem;
+}
+
+.headline {
+  margin-top: 1.1rem;
+  max-width: 24ch;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-variation-settings: 'wdth' 106;
+  font-size: var(--step-2);
+  line-height: 1.15;
+  color: var(--ink);
+}
+
+.cta {
+  margin-top: 1.75rem;
+}
+
+.channels {
+  display: grid;
+  align-content: start;
+}
+
+.channel {
+  display: grid;
+  grid-template-columns: 5.5rem minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 1rem;
+  padding-block: 0.95rem;
+  border-top: 1px solid var(--rule);
+  transition: color 0.25s var(--ease);
+}
+
+.channels li:last-child .channel {
+  border-bottom: 1px solid var(--rule);
+}
+
+.channelLabel {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.channelValue {
+  font-size: 0.94rem;
+  color: var(--ink-dim);
+  overflow-wrap: anywhere;
+}
+
+.channelArrow {
+  color: var(--rule-strong);
+  transition:
+    transform 0.25s var(--ease),
+    color 0.25s var(--ease);
+}
+
+.channel:hover .channelValue {
+  color: var(--amber);
+}
+
+.channel:hover .channelArrow {
+  color: var(--amber);
+  transform: translateX(3px);
+}
+
+@media (min-width: 860px) {
+  .grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+    gap: 3.5rem;
+    align-items: center;
+  }
+}

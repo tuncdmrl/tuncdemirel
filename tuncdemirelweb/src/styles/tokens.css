@@ -1,0 +1,122 @@
+/**
+ * Tasarım değişkenleri.
+ *
+ * Koyu tema (varsayılan): bir uzay istasyonunun gövdesi — vakum lacivertleri,
+ * gösterge amberi ve yalnızca "aktif" durumlar için ayrılmış GO yeşili.
+ * Açık tema: aynı konsolun gün ışığındaki hâli — soğuk kâğıt grisi zemin,
+ * koyulaştırılmış amber ve yeşil.
+ */
+:root {
+  color-scheme: dark;
+
+  --void: #05080d;
+  --hull: #080e15;
+  --panel: #0c141d;
+  --panel-raised: #111b26;
+  --rule: #1b2733;
+  --rule-strong: #2a3b4c;
+  --glass: rgba(255, 255, 255, 0.028);
+
+  --ink: #e9eef4;
+  --ink-dim: #a6b4c3;
+  --ink-muted: #7d8d9e;
+
+  --amber: #f2a73b;
+  --amber-soft: rgba(242, 167, 59, 0.14);
+  --amber-line: rgba(242, 167, 59, 0.34);
+  --amber-hover: #ffbb55;
+  --on-amber: #12160c;
+
+  --go: #4fd6a0;
+  --go-soft: rgba(79, 214, 160, 0.13);
+  --go-line: rgba(79, 214, 160, 0.4);
+  --go-glow: rgba(79, 214, 160, 0.8);
+
+  /* Yüzeyler ve atmosfer */
+  --bar-bg: rgba(5, 8, 13, 0.82);
+  --sheet-bg: rgba(5, 8, 13, 0.96);
+  --footer-bg: rgba(5, 8, 13, 0.6);
+  --surface-soft: rgba(255, 255, 255, 0.02);
+  --surface-softer: rgba(255, 255, 255, 0.015);
+  --sweep: rgba(255, 255, 255, 0.07);
+
+  --sky-1: #10202e;
+  --sky-2: #0d1722;
+  --grid-line: rgba(140, 175, 210, 0.028);
+  --orbit-line: rgba(120, 160, 200, 0.09);
+  --vignette: rgba(0, 0, 0, 0.62);
+  --star-opacity: 0.65;
+
+  --limb-top: #17323f;
+  --limb-mid: #0b1722;
+  --limb-edge: rgba(242, 167, 59, 0.45);
+  --limb-glow: rgba(242, 167, 59, 0.16);
+
+  --font-display: 'Archivo', 'Arial Narrow', system-ui, sans-serif;
+  --font-body: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'Cascadia Mono', monospace;
+
+  --step--2: 0.68rem;
+  --step--1: clamp(0.78rem, 0.76rem + 0.1vw, 0.84rem);
+  --step-0: clamp(0.95rem, 0.92rem + 0.16vw, 1.05rem);
+  --step-1: clamp(1.08rem, 1rem + 0.34vw, 1.28rem);
+  --step-2: clamp(1.32rem, 1.16rem + 0.7vw, 1.7rem);
+  --step-3: clamp(1.75rem, 1.4rem + 1.5vw, 2.6rem);
+  --step-4: clamp(2.5rem, 1.6rem + 4vw, 5rem);
+
+  --shell: 1180px;
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+  --section-gap: clamp(4.5rem, 9vw, 8.5rem);
+  --radius: 3px;
+
+  --lift: 0 26px 64px -34px rgba(0, 0, 0, 0.95);
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+
+  --void: #e7eaee;
+  --hull: #eef1f4;
+  --panel: #ffffff;
+  --panel-raised: #f6f8fa;
+  --rule: #d5dbe1;
+  --rule-strong: #adb8c3;
+  --glass: rgba(16, 28, 44, 0.016);
+
+  --ink: #0f1720;
+  --ink-dim: #3e4b59;
+  --ink-muted: #5b6773;
+
+  --amber: #8a5405;
+  --amber-soft: rgba(138, 84, 5, 0.09);
+  --amber-line: rgba(138, 84, 5, 0.32);
+  --amber-hover: #6f4304;
+  --on-amber: #fdf6ec;
+
+  --go: #096546;
+  --go-soft: rgba(9, 101, 70, 0.1);
+  --go-line: rgba(9, 101, 70, 0.38);
+  --go-glow: rgba(9, 101, 70, 0.45);
+
+  --bar-bg: rgba(238, 241, 244, 0.85);
+  --sheet-bg: rgba(238, 241, 244, 0.97);
+  --footer-bg: rgba(255, 255, 255, 0.5);
+  --surface-soft: rgba(16, 28, 44, 0.02);
+  --surface-softer: rgba(16, 28, 44, 0.014);
+  --sweep: rgba(138, 84, 5, 0.09);
+
+  --sky-1: #dbe3ea;
+  --sky-2: #e4e9ee;
+  --grid-line: rgba(40, 70, 105, 0.05);
+  --orbit-line: rgba(40, 70, 105, 0.09);
+  --vignette: rgba(90, 105, 125, 0.16);
+  --star-opacity: 0;
+
+  --limb-top: #cbd7e1;
+  --limb-mid: #dde4ea;
+  --limb-edge: rgba(138, 84, 5, 0.4);
+  --limb-glow: rgba(138, 84, 5, 0.12);
+
+  --lift: 0 22px 50px -30px rgba(30, 45, 65, 0.4);
+}

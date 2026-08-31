@@ -1,0 +1,31 @@
+.page {
+  padding-top: clamp(7rem, 16vh, 10rem);
+  min-height: 70svh;
+}
+
+.body {
+  display: grid;
+  gap: 1.1rem;
+  justify-items: start;
+}
+
+.title {
+  font-size: var(--step-3);
+  color: var(--ink);
+}
+
+.text {
+  max-width: 52ch;
+  color: var(--ink-dim);
+}
+
+.link {
+  margin-top: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--amber);
+  border-bottom: 1px solid var(--amber-line);
+  padding-bottom: 2px;
+}

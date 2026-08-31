@@ -1,0 +1,103 @@
+.porthole {
+  position: relative;
+  width: min(100%, 400px);
+  aspect-ratio: 1;
+  margin: 0 auto;
+  isolation: isolate;
+}
+
+.bezel,
+.ring {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.bezelRing {
+  fill: none;
+  stroke: var(--rule);
+  stroke-width: 1;
+}
+
+.tick {
+  stroke: var(--rule-strong);
+  stroke-width: 1;
+}
+
+.tickMajor {
+  stroke: var(--amber-line);
+  stroke-width: 1.5;
+}
+
+.ring {
+  animation: orbit 68s linear infinite;
+}
+
+.ringText {
+  fill: var(--ink-muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+}
+
+.glassWrap {
+  position: absolute;
+  inset: 14%;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid var(--rule-strong);
+  box-shadow:
+    inset 0 0 40px rgba(0, 0, 0, 0.8),
+    0 30px 70px -40px rgba(0, 0, 0, 1);
+  background: var(--panel);
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 24%;
+  filter: saturate(0.92) contrast(1.04) brightness(0.96);
+}
+
+/* Camdaki ışık yansıması */
+.glare {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background:
+    radial-gradient(120% 90% at 22% 8%, rgba(255, 255, 255, 0.16), transparent 46%),
+    radial-gradient(90% 80% at 84% 96%, rgba(242, 167, 59, 0.12), transparent 55%);
+  pointer-events: none;
+}
+
+/* Açık temada cam daha az koyulaşır, yansıma yumuşar. */
+:global(html[data-theme='light']) .glassWrap {
+  box-shadow:
+    inset 0 0 30px rgba(30, 45, 65, 0.14),
+    0 24px 50px -34px rgba(30, 45, 65, 0.55);
+}
+
+:global(html[data-theme='light']) .photo {
+  filter: saturate(1) contrast(1.02);
+}
+
+:global(html[data-theme='light']) .glare {
+  background:
+    radial-gradient(120% 90% at 22% 8%, rgba(255, 255, 255, 0.4), transparent 42%),
+    radial-gradient(90% 80% at 84% 96%, rgba(138, 84, 5, 0.08), transparent 55%);
+}
+
+@keyframes orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ring {
+    animation: none;
+  }
+}
