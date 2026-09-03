@@ -17,7 +17,29 @@ export const skillRecords = [
   {
     id: 'mimari',
     title: 'Architecture',
-    items: ['MVVM', 'VIPER', 'Modular structure'],
+    items: [
+      'Clean Architecture',
+      'Onion Architecture',
+      'Hexagonal (Ports & Adapters)',
+      'Layered (N-Tier)',
+      'MVC',
+      'MVVM',
+      'VIPER',
+      'Modular structure',
+    ],
+  },
+  {
+    id: 'desenler',
+    title: 'Patterns & Principles',
+    items: [
+      'SOLID',
+      'Repository & Unit of Work',
+      'Dependency injection',
+      'Domain-Driven Design',
+      'CQRS',
+      'Component-based UI',
+      'Microservices & event-driven',
+    ],
   },
   {
     id: 'yapay-zeka',

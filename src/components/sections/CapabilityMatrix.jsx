@@ -18,8 +18,8 @@ export function CapabilityMatrix() {
         {groups.map((group) => (
           <Panel key={group.id} label={group.title} className={styles.card} interactive>
             <ul className={styles.items}>
-              {group.items.map((item) => (
-                <li key={item}>
+              {group.items.map((item, index) => (
+                <li key={item} style={{ '--index': index }}>
                   <span className={styles.bullet} aria-hidden="true" />
                   {item}
                 </li>

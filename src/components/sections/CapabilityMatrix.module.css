@@ -66,21 +66,10 @@
     color 0.3s var(--ease);
 }
 
-/* Kalemler sırayla, hafifçe öne çıkar */
-.items li:nth-child(1) {
-  transition-delay: 0ms;
-}
-.items li:nth-child(2) {
-  transition-delay: 35ms;
-}
-.items li:nth-child(3) {
-  transition-delay: 70ms;
-}
-.items li:nth-child(4) {
-  transition-delay: 105ms;
-}
-.items li:nth-child(5) {
-  transition-delay: 140ms;
+/* Kalemler sırayla, hafifçe öne çıkar. Gecikme sıra numarasından
+   hesaplanır ki liste uzadıkça son maddeler de sıraya dahil olsun. */
+.items li {
+  transition-delay: calc(var(--index, 0) * 35ms);
 }
 
 .card:hover .items li,

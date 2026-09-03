@@ -17,7 +17,29 @@ export const skillRecords = [
   {
     id: 'mimari',
     title: 'Mimari',
-    items: ['MVVM', 'VIPER', 'Modüler yapı'],
+    items: [
+      'Clean Architecture',
+      'Onion Architecture',
+      'Hexagonal (Ports & Adapters)',
+      'Katmanlı mimari (N-Tier)',
+      'MVC',
+      'MVVM',
+      'VIPER',
+      'Modüler yapı',
+    ],
+  },
+  {
+    id: 'desenler',
+    title: 'Desenler & İlkeler',
+    items: [
+      'SOLID',
+      'Repository & Unit of Work',
+      'Bağımlılık enjeksiyonu (DI)',
+      'Domain Driven Design',
+      'CQRS',
+      'Bileşen tabanlı UI',
+      'Mikroservis & olay tabanlı akış',
+    ],
   },
   {
     id: 'yapay-zeka',
