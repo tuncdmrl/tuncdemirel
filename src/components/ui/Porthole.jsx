@@ -23,6 +23,8 @@ function tickCoords(index) {
  */
 export function Porthole({ src, alt, ringText }) {
   const repeated = `${ringText} · `.repeat(3)
+  const pathRadius = 172
+  const circumference = 2 * Math.PI * pathRadius
 
   return (
     <figure className={styles.porthole}>
@@ -51,7 +53,7 @@ export function Porthole({ src, alt, ringText }) {
           />
         </defs>
         <text className={styles.ringText}>
-          <textPath href="#porthole-ring-path" startOffset="0">
+          <textPath href="#porthole-ring-path" startOffset="0" textLength={circumference} lengthAdjust="spacing">
             {repeated}
           </textPath>
         </text>
